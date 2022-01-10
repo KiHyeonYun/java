@@ -187,6 +187,8 @@ gradle-app.setting
 
 # End of https://www.toptal.com/developers/gitignore/api/java,macos,gradle,intellij
 
+.idea/**/*
+gradle
 build.gradle
 gradlew
 gradlew.bat
