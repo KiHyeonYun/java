@@ -89,4 +89,53 @@
   * `정수형` : byte, char, short, int, long
   * `실수형` : float, double
   * `논리형` : boolean
-  
+
+| 종류     | 타입         | 메모리 크기 | 범위                                          |
+|--------|------------|--------|---------------------------------------------|
+| 정수     | byte       | 1byte  | -128 ~ 127                                  |
+| 정수     | char       | 2byte  | 0 ~ 65,535                                  |
+| 정수     | short      | 2byte  | -32,768 ~ 32,767                            |
+| 정수     | int        | 4byte  | -2,147,483,648 ~ 2,147,483,647              |
+| 정수     | long       | 8byte  | 2^63 ~ 2^63-1                               |
+| 실수     | float      | 4byte  | (+/-)1.4E-45 ~ (+/-)3.4028235E38            |
+| 실수     | double     | 8byte  | (+/-)4.9E-324 ~ (+/-)1.7976931348623157E308 |
+| 논리     | boolean    | 1byte  | true, false                                 |
+
+
+### 타입 변환
+  * 타입 변환이란 데이터 타입을 다른 데이터 타입으로 변환하는 것을 말함
+  * byte -> int, int -> byte
+  * 타입 변환의 종류는 `자동 타입 변환(Promotion)`, `강제 타입 변환(Casting)` 이 있음
+
+### 자동 타입 변환(Promotion)
+  * `작은 크기를 가지는 타입`이 `큰 크기를 가지는 타입`에 저장될 때 발생
+  ```java
+  public class Promotion {
+    byte a = 10;
+    int b = a; //자동 타입 변환이 발생
+  }
+  ```
+  * 크기의 순서 
+    * `byte(1) < short(2) < int(4) < long(8) < float(4) < double(8)`
+    
+
+### 강제 타입 변환(Casting)
+  * 자동 타입 변환과는 반대로 `작은 크기를 가지는 타입`이 `큰 크기를 가지는 타입`에 저장될 때 사용
+  ```java 
+  public class Casting {
+    long a = 10;
+    byte b = (byte)a; //자동 타입 변환이 발생하지 않음 
+    }
+  ```
+  * (type) 캐스팅 연산자를 사용하여 변환 시켜줘야 함
+
+### 연산식에서의 자동 타입 변환
+  * 연산은 기본적으로 같은 타입의 피연산자(operand)간에만 수행됨
+  * 서로 다른 타입의 피 연산자가 있을 경우 두 피연산자 중 크기가 큰 타입으로 `Promotion`이 발생함
+  ```java
+  public class Operation {
+    int a = 10;
+    double b = 10.5;
+    double result = a + b; //20.5 
+}
+  ```
