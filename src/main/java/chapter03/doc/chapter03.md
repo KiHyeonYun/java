@@ -6,7 +6,7 @@
   * 피연산자(operand)는 연산되는 데이터
   * 연산식(expressions)연산자와 피연산자로 연산의 과정을 기술한 것
   ```java
-  public class Variable {
+  public class Operator {
       public static void main(String[] args) {
           int x = 10;
           int y = 10;
