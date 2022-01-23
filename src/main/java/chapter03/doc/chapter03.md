@@ -63,3 +63,17 @@
   istore_1 [i]
   iinc 1 1 [i]
   ```
+
+### 연산과 반환
+  * 피연산자들이 모두 정수 타입이고, int 타입보다 크기가 작을 경우 모두 int 타입으로 변환 후 연산 수행
+  * 따라서 결과는 int 타입
+  ```java
+  public class ArithmeticType {
+    byte a = 10;
+    byte b = 10;
+    byte result = a + b; // exception 발생
+    int result = a + b;
+  }
+  ```
+  * 피연산자들이 모두 정수 타입이고, long 타입이 있을 경우 모두 long 타입으로 변환 후, 연산 수행
+  * 피연산자 중 실수 타입(float, double)이 있을 경우, 크기가 큰 실수 타입으로 변환 후, 연산을 수행
