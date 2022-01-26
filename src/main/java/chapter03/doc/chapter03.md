@@ -77,3 +77,9 @@
   ```
   * 피연산자들이 모두 정수 타입이고, long 타입이 있을 경우 모두 long 타입으로 변환 후, 연산 수행
   * 피연산자 중 실수 타입(float, double)이 있을 경우, 크기가 큰 실수 타입으로 변환 후, 연산을 수행
+
+### 연산시 주의 사항
+  * 오버플로우 처리
+  * 정확한 계산은 정수를 사용
+  * NaN(Not a Number)과 Infinity 
+  * 연산 시, Exception 발생 가능 지점에 ArithmeticException 처리
